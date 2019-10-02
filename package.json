@@ -1,0 +1,22 @@
+{
+  "name": "api-tester",
+  "version": "0.1.0",
+  "description": "Testing REST Api backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heroku-enablement/api-server.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Takashi Abe",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/heroku-enablement/api-server/issues"
+  },
+  "homepage": "https://github.com/heroku-enablement/api-server#readme"
+}
