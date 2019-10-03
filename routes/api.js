@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 // GET /api/v1/products/:id
 router.get('/:id', (req, res) => {
   const id = req.params.id;
-  res.json({ id: uuidv4(), name: `product_${id}` });
+  res.json({ id: id, name: `product_${id}` });
 });
 
 // POST /api/v1/products/
