@@ -16,8 +16,7 @@ const api = require('./routes/api');
 // routing tables
 app.use('/', index);
 app.use('/api', index);
-app.use('/api/v1', index);
-app.use('/api/v1/products', api);
+app.use('/api/v1', api);
 
 // start the server
 app.listen(port);
