@@ -3,7 +3,11 @@ const express = require('express');
 const router = express.Router();
 const uuidv4 = require('uuid/v4');
 
-// GET /api/v1/products
+router.get('/', (req, res) => {
+  res.json();
+})
+
+// GET /api/v1/:key
 router.get('/:key', (req, res) => {
   const count = +req.query.count || 10;
   const key = req.params.key;
@@ -16,7 +20,7 @@ router.get('/:key', (req, res) => {
   res.end();
 });
 
-// GET /api/v1/:id
+// GET /api/v1/:key/:id
 router.get('/:key/:id', (req, res) => {
   const id = req.params.id;
   const key = req.params.key;
@@ -26,7 +30,7 @@ router.get('/:key/:id', (req, res) => {
   res.json(response);
 });
 
-// POST /api/v1/products/
+// POST /api/v1/:key
 router.post('/:key', (req, res) => {
   const id = uuidv4();
   const key = req.params.key;
