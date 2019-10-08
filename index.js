@@ -15,7 +15,6 @@ const api = require('./routes/api');
 
 // routing tables
 app.use('/', index);
-app.use('/api', index);
 app.use('/api/v1', api);
 
 // start the server

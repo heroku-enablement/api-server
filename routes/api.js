@@ -3,6 +3,17 @@ const express = require('express');
 const router = express.Router();
 const uuidv4 = require('uuid/v4');
 
+const getValue = (obj) => {
+  let result = {};
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      result[key] = obj[key];
+    }
+  }
+  return result;
+}
+
 router.get('/', (req, res) => {
   res.json();
 })
@@ -27,18 +38,12 @@ router.get('/:key/:id', (req, res) => {
 
   let response = { id: id };
   response[key] = `${key}_${id}`;
-  res.json(response);
+  res.json({ ...response, ...getValue(req.query) });
 });
 
 // POST /api/v1/:key
 router.post('/:key', (req, res) => {
-  const id = uuidv4();
-  const key = req.params.key;
-  const name = req.body.name;
-
-  let response = { id: id };
-  response[key] = name;
-  res.json(response);
+  res.json({ id: uuidv4(), ...getValue(req.body) });
 });
 
 module.exports = router;
